@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Little Surprise for Ren</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;  /* Center horizontally */
+      align-items: center;      /* Center vertically */
+      height: 100vh;            /* Full viewport height */
+      background-color: #cc5c71; /* Background color */
+      color: #590D22;           /* Color for the rest of the text */
+      font-family: Merriweather, serif; /* Font for better appearance */
+    }
+    .container {
+      text-align: left;       /* Align text to the left */
+    }
+    h2 {
+      text-decoration: underline; /* Underline the heading */
+    }
+    .input-container {
+      display: flex;            /* Use flexbox to align items */
+      flex-direction: row;      /* Align items horizontally */
+      align-items: center;      /* Center items vertically */
+      gap: 8px;                /* Space between input and button */
+    }
+    input, button {
+      padding: 8px;            /* Add some padding */
+      border: 2.5px solid #800F2F; /* Border color for input and button */
+      border-radius: 3px;       /* Optional, for rounded corners */
+      background-color: #b3495d; /* Background color for input and button */
+      color: #800F2F;           /* Text color for input and button */
+    }
+    input {
+      width: 221px;             /* Set a smaller width for the input field */
+    }
+    button {
+      width: 100px;             /* Set a fixed width for the button */
+    }
+    input::placeholder {
+      color: #800F2F;           /* Placeholder text color */
+    }
+    .message {
+      margin-top: 20px;         /* Space between input/button and message */
+      padding: 100px;            /* Padding around the message */
+      border: 0px solid #800F2F; /* Border color for the message box */
+      border-radius: 4px;       /* Rounded corners */
+      background-color: #cc5c71; /* Background color for the message box */
+      color: #800F2F;           /* Text color for the message */
+      font-size: 15px;          /* Font size for the message */
+      text-align: left;        /* Align text to the left */
+      white-space: pre-line;    /* Preserve whitespace and line breaks */
+      max-width: 10000px;         /* Max width of the message box */
+      width: 100%;              /* Make the box responsive */
+      height: 90%;              /* Make the box responsive */
+      box-sizing: border-box;   /* Include padding and border in the element's total width and height */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 id="passwordPrompt">Enter the password to view the message:</h2>
+  <div class="input-container" id="inputContainer">
+    <input type="password" id="passwordInput" placeholder="hint: it's a nickname you use for me ♡">
+    <button onclick="checkPassword()">Submit</button>
+  </div>
+  
+  <div id="message" class="message" style="display:none;">
+    <!-- The secret message will be shown here -->
+  </div>
+</div>
+
+<script>
+  var correctPassword = "princess";  // Custom password
+
+  function checkPassword() {
+    var inputPassword = document.getElementById("passwordInput").value;
+
+    if (inputPassword === correctPassword) {
+      displayMessage();
+    } else {
+      alert("Stop pretending to be my ren plz.");
+    }
+  }
+
+  function displayMessage() {
+    var messageDiv = document.getElementById("message");
+    var inputContainer = document.getElementById("inputContainer");
+    var passwordPrompt = document.getElementById("passwordPrompt");
+
+    // Define the message
+    var message = `hiii ren!! ggs you found the right password, you can get a round of applause!!! 
+
+Now time for the little surprise i wanted to make you find hihihihi (and that i kinda took 17hours to make). 
+
+As you know I love you so so so so so much baby and I just need to make up a bit for whatever the other bitch did at this point because you do not deserve what he told you and please you know i hate everything he said to you because i sincerely love you so much and it wont change i promise you. Somehow my heart is racing a bit while writing this oh god. This is going to be so corny but the months i spent with you were just amazing and i am sad that i am only available to be by your side during weekends now, and i am even more sad that i cannot be next to you right now, being able to tell you how much i love you, i would not get tired of you looking at me and i would be unable to get my eyes off of you because you're so handsome and i love you and even if i never got to hear your voice i know i would love it already and you got such pretty way of wording things your voice cannot but match that. Even while i'm writing this you're being all cute and sending me very adorable messages omggggg!! You also know i love getting pics from you because i would love to just being able to always see you even when you find yourself not really attractive because for me you are, he may have hated your face and your body but you know i always commented your eyes because they are so pretty and i love the way they got that little sparkle when the pic you take is for me only to see but it would be way better if i would be able to be there with you and get to touch and feel you and just hug you very tight and smell you even if its a bit weird that why i got so obsessed with the idea of finding your perfume somewhere, i just wanted to be able to hug something very tight and be able to feel the one i love a bit more. I just want to hug you and cuddle you and play with your hair because it frames your face so perfectly, talking about frame it just reminded me of how cute you looked with glasses, even if i was not able to look at the picture well since i was out and you deleted it when i got back home but please your glasses are also so adorable on you (even if it makes you so adorable i would try to kiss you and take them off in the process but!). 
+
+Anyways renie you know i love you and i love the way you look and how big and strong you are and everything about you, the way you word things so well and how sweet and adorable and caring you are and how you get so excited when you talk about stuff you love like batman or music, i can really feel the sparkles in your eyes as you write and i just love every single part of you i need to kissy kiss you!! 
+
+Sorry if its not up to your expectations, you know im not very good with words but thats more about the feelings rather than what is said, if you get what i mean, im still very proud of you for opening up to me like you did and you're very brave and i am proud of being yours and even if you're scared i might change or leave it wont be the case and ill be by your side forever <3 
+
+- bisous, your nono ♡`;
+    
+    // Hide the input container and password prompt
+    inputContainer.style.display = 'none';
+    passwordPrompt.style.display = 'none';
+
+    // Show the message div
+    messageDiv.style.display = 'block';
+    messageDiv.innerHTML = message;
+  }
+</script>
+
+</body>
+</html>
